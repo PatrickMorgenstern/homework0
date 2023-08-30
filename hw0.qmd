@@ -1,0 +1,38 @@
+---
+title: "Homework 0"
+format: html
+editor: visual
+execute: 
+  echo: false
+---
+
+```{r}
+a <- 1 
+b <- 3
+c <- 2
+delta = b^2 - 4*a*c
+x1 <- (-b + (delta)^(0.5)) / (2*a)
+
+x2 <- (-b - (delta)^(0.5)) / (2*a)
+
+
+if (delta < 0) {
+  print("No real solutions")
+  
+} else if (delta == 0) {
+  sprintf("Solution is %f", x1)
+  
+} else {
+  sprintf("Solutions are %f and %f", x1, x2)
+}
+
+```
+
+```{r}
+x <- seq(-5, 2, length = 300)
+plot(x, a *x^2 + b*x + c, type = 'l', ylab = 'f(x)', xlab = 'x')
+abline(h = 0, lty = 2)
+
+```
+
+The solutions of the above equation can be verified with the graph generated below
